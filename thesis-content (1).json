@@ -1,0 +1,78 @@
+{
+  "thesisContent": {
+    "chapter-0": {
+      "section-0": {
+        "block-0": "Financial literacy refers to the knowledge and skills that enable individuals to make informed and effective decisions about their financial resources. It includes understanding essential concepts such as budgeting, saving, investing, managing credit, and evaluating financial risks. A financially literate person can plan for short-term and long-term goals, avoid excessive debt, and make choices that support financial stability and independence. By developing strong financial literacy skills, individuals can navigate increasingly complex financial systems, protect themselves from fraud, and build a secure future through responsible money management. sdasdasd",
+        "block-1": "",
+        "block-2": "",
+        "block-3": ""
+      },
+      "section-1": {
+        "block-0": ""
+      },
+      "section-2": {
+        "block-0": ""
+      },
+      "section-3": {
+        "block-0": "",
+        "block-1": "",
+        "block-2": "",
+        "block-3": ""
+      },
+      "section-4": {
+        "block-0": "",
+        "block-1": ""
+      },
+      "section-5": {
+        "block-0": ""
+      },
+      "section-6": {
+        "block-0": "",
+        "block-1": "",
+        "block-2": ""
+      },
+      "section-7": {
+        "block-0": "",
+        "block-1": ""
+      }
+    },
+    "chapter-1": {
+      "section-0": {
+        "block-0": "",
+        "block-1": ""
+      },
+      "section-1": {
+        "block-0": "",
+        "block-1": "",
+        "block-2": "",
+        "block-3": ""
+      },
+      "section-2": {
+        "block-0": ""
+      },
+      "section-3": {
+        "block-0": "",
+        "block-1": "",
+        "block-2": "",
+        "block-3": "",
+        "block-4": "",
+        "block-5": ""
+      },
+      "section-4": {
+        "block-0": ""
+      },
+      "section-5": {
+        "block-0": ""
+      }
+    }
+  },
+  "variables": {
+    "dv": "Financial Literacy",
+    "iv1": "Situational Awareness",
+    "respondents": "Students",
+    "mv": "Year Level"
+  },
+  "projectTitle": "Research Template 1 IV 1DV 1MODV",
+  "version": "2.0",
+  "exportDate": "2025-12-13T02:53:52.798Z"
+}
