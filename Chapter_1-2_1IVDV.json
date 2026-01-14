@@ -1,0 +1,663 @@
+{
+  "projectTitle": "Research Template 1 IV 1DV 1MODV",
+  "version": "2.0",
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle": "Chapter 1 INTRODUCTION",
+      "sections": [
+        {
+          "sectionNumber": 1,
+          "sectionTitle": "Rationale of the Study",
+          "sectionGuide": "Explains the research context and the reasons that led to the conduct of the study.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Introduction to the Topic"
+              },
+              "requirements": [
+                " Must be in third person. Clearly state the problematic issues on [Insert DV] in Global, National, & Local Context,  At least 2 authors from the RRL per paragraph."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 2,
+              "content": {
+                "text": "Problematic issues on [Insert IV1]. Must have Problems in Global, National, & Local Context"
+              },
+              "requirements": [
+                " Must be in third person. Problematic issues on [Insert IV1]. Must have Problems in Global, National, & Local Context At least 2 authors from the RRL per paragraph."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 3,
+              "content": {
+                "text": "Link between [Insert IV1] and [Insert DV], include the social value of the study."
+              },
+              "requirements": [
+                " Must be in third person. Link between [Insert IV1] and [Insert DV], include the social value of the study At least 2 authors from the RRL per paragraph."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 4,
+              "content": {
+                "text": "Identify the gap in literature—what previous studies have not been addressed. Explain why it is urgent to study the issue now. Describe how the findings will be disseminated"
+              },
+              "requirements": [
+                " Must be in third person. Identify the gap in literature—what previous studies have not been addressed. Explain why it is urgent to study the issue now. Describe how the findings will be disseminated."
+              ]
+            }
+          ],
+          "notes": [
+            ""
+          ]
+        },
+        {
+          "sectionNumber": 2,
+          "sectionTitle": "Research Objectives",
+          "sectionGuide": "",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No lengthy discussion required. IGNORE Numbered list formatting inconsistencies. IGNORE GRAMATICAL ERROR IF FOLLOWING THE CONTENT.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "combo",
+              "contentNumber": 1,
+              "content": {
+                "pText": "State the pupose of the study. Must state the significant relationship of [Insert IV1] and [Insert DV] of [Insert Respondents].",
+                "lText": [
+                  "1. to describe the level of [Insert IV1] of [Insert Respondents]",
+                  "2. to ascertain the level of [Insert DV] of [Insert Respondents]",
+                  "3. to determine the significant difference in the  [Insert IV1] and [Insert DV] when grouped according to [Insert MV]",
+                  "4. to determine the significant relationship between [Insert IV1] and [Insert DV] among [Insert Respondents]"
+                 
+                ]
+              },
+              "requirements": [
+                "Each item in the list the student list must be similar thought to each items in this guide. Ignore the numbering but the order must be followed."
+              ],
+              "specialInstructions": [
+                "This is a combo paragraph + list, content must be in order. IGNORE GRAMATICAL ERROR."
+              ]
+            }
+          ],
+          "notes": [
+            "Objectives must align with research questions and hypotheses."
+          ]
+        },
+        {
+          "sectionNumber": 3,
+          "sectionTitle": "Hypothesis",
+          "sectionGuide": "States the expected relationships between independent and dependent variables.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No theoretical justification needed. IGNORE Numbered list formatting inconsistencies",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "combo",
+              "contentNumber": 1,
+              "content": {
+                "pText": "The following hypotheses of the study will be tested at .05 level of significance:",
+                "lText": [
+                  "1. There is no significant difference in the [Insert IV1] and [Insert DV] of [Insert Respondents] when grouped according to [Insert MV].",
+                  "2. There is no significant relationship between [Insert IV1] and [Insert DV] among [Insert Respondents]."
+                ]
+              },
+              "requirements": [
+                "**content items must be similar in meaning. IGNORE RESEARCH QUESTION MISSING. IT IS WHAT IT IS. IGNORE THE NUMBERS. FOLLOW THE ORDER.** "
+              ],
+              "specialInstructions": [
+                "This is a combo paragraph + list, content must be exactly or similar. IGNORE GRAMATICAL ERROR."
+              ]
+            }
+
+          ],
+          "notes": [
+            "Ensure alignment of hypotheses with variables and objectives."
+          ]
+        },
+        {
+          "sectionNumber": 4,
+          "sectionTitle": "Review of Related Literature",
+          "sectionGuide": "Summarize empirical findings and related studies relevant to the research variables. Present the discussion by theme or chronology.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No theoretical definitions or per-paragraph instructions.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Provide a short introductory paragraph introducing the purpose of the RRL — to present empirical evidence supporting the study variables and establish research gaps."
+              },
+              "requirements": [
+                " Must be in third person. At least 2 sentence introduction"
+              ]
+            },
+            {
+              "contentType": "subsection",
+              "contentNumber": 2,
+              "subsectionTitle": "Literature on [Insert IV1]",
+              "content": {
+                "text": "Follow within 10 years recency rule, Cite both local and international sources, Focus on studies related to [Insert IV1]"
+              },
+              "requirements": [
+                " Must be in third person. Empirical evidence only, Each paragraph must have minimum of 4 sentences. At least 2 time relevant APA 7th Edition citations per paragraph. Follow within 10 years recency rule"
+              ],
+              "specialInstructions": [
+                "**the time relevant and related studies to [Insert IV1]"
+              ]
+            },
+            {
+              "contentType": "subsection",
+              "contentNumber": 3,
+              "subsectionTitle": "Literature on [Insert DV]",
+              "content": {
+                "text": "Follow within 10 years recency rule, Cite both local and international sources, Focus on studies related to [DV]"
+              },
+              "requirements": [
+                " Must be in third person. Empirical evidence only, Each paragraph must have minimum of 4 sentences. At least 2 time relevant APA CITATION per paragraph. Follow within 10 years recency rule"
+              ],
+              "specialInstructions": [
+                "**the time relevant and related studies to [Insert DV]"
+              ]
+            },
+            {
+              "contentType": "subsection",
+              "contentNumber": 4,
+              "subsectionTitle": "Literature on [Insert MV]",
+              "content": {
+                "text": "Follow within 10 years recency rule, Cite both local and international sources, Include both direct and indirect relationships"                  
+              },
+              "requirements": [
+                " Must be in third person. Empirical evidence only, Each paragraph must have minimum of 4 sentences and minimum of 2 paragraph. At least 2 time relevant APA CITATION per paragraph. Follow within 10 years recency rule"
+              ],
+              "specialInstructions": [
+                "**the time relevant and related studies to [Insert MV]"
+              ]
+            }
+          ]
+        },
+        {
+          "sectionNumber": 5,
+          "sectionTitle": "Theoretical Framework",
+          "sectionGuide": "Describes the theories or models that is relevant to the study.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No statistical data required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Theory 1 must show the relationship/influence/link of [Insert IV1] to [Insert DV]"
+              },
+              "requirements": [
+                " Must be in third person. Theory 1/pronouncements/hypothesis/assumptions must show the relationship/influence/link of [Insert IV1] to [Insert DV], At least 4 sentences. Cite at least 2 authors."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 2,
+              "content": {
+                "text": "Theory 2 must present the relationship/influence/link of [Insert IV1] and [Insert DV] to the [Insert MV]"
+              },
+              "requirements": [
+                " Must be in third person. Theory 2/pronouncements/hypothesis/assumptions must present the relationship/influence/link of [Insert IV1] and [Insert DV] to the [Insert MV]. At least 4 sentences. Cite at least 2 authors."
+              ]
+            }
+          ],
+          "notes": [
+            "In the absence of a theoretical basis on the combination of variables, the researcher may utilize pronouncements, hypothesis, or assumptions from scholars/researchers denoting the relevance on the combination of variables considered in the present study."
+          ]
+        },
+        {
+          "sectionNumber": 6,
+          "sectionTitle": "Conceptual Framework",
+          "sectionGuide": "Illustrate the relationship of the Variables. The figure must be presented in one whole page.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No statistical data required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Describe and explain the direction of the arrows and the variables considered in the figure. The figure must be presented in one whole page."
+              },
+              "requirements": [
+                "Must be in third person. Mention each group separately."
+              ]
+            }
+          ],
+          "notes": [
+            "-no hanging pages for the figure"
+          ]
+        },
+        {
+          "sectionNumber": 7,
+          "sectionTitle": "Significance of the Study",
+          "sectionGuide": "Describes who will benefit from the study and how.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No statistical data required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Provide definition of Primary/Direct beneficiaries and Secondary/Indirect beneficiaries of the current study."
+              },
+              "requirements": [
+                " Must be in third person. 4+ sentences per paragraph"
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 2,
+              "content": {
+                "text": "Discuss in detail the Primary and Direct beneficiaries and benefits that can be obtained from this study. Make sure to highlight the advantages for each beneficiary."
+              },
+              "requirements": [
+                " Must be in third person. Discuss in detail the Primary and Direct beneficiaries and benefits that can be obtained from this study. Make sure to highlight the advantages for each beneficiary. 4+ sentences per paragraph"
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 3,
+              "content": {
+                "text": "Discuss in detail the Secondary and Indirect beneficiaries and benefits that can be obtained from this study. Make sure to highlight the advantages for each beneficiary."
+              },
+              "requirements": [
+                " Must be in third person. Discuss in detail the Primary and Direct beneficiaries and benefits that can be obtained from this study. Make sure to highlight the advantages for each beneficiary. 4+ sentences per paragraph"
+              ]
+            }
+          ],
+          "notes": [
+            "Ensure coverage of all relevant stakeholder groups."
+          ]
+        },
+        {
+          "sectionNumber": 8,
+          "sectionTitle": "Definition of Terms",
+          "sectionGuide": "Defines key terms and concepts used in the study.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No statistical data required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Define [Insert IV1]."
+              },
+              "requirements": [
+                " Must be in third person. Conceptual definitions w/ 1 citation followed by operational definition."
+              ],
+              "specialInstructions": [
+                "Use authoritative sources for definitions."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 3,
+              "content": {
+                "text": "Define [Insert DV]."
+              },
+              "requirements": [
+                " Must be in third person. Conceptual definitions w/ 1 citation followed by operational definition."
+              ],
+              "specialInstructions": [
+                "Use authoritative sources for definitions."
+              ]
+            }
+          ],
+          "notes": [
+            "Ensure coverage of all relevant stakeholder groups."
+          ]
+        }
+      ],
+      "generalNotes": [
+        ""
+      ]
+    },
+    {
+      "chapterNumber": 2,
+      "chapterTitle": "Chapter 2 METHOD",
+      "introductoryStatement": "Provide a short introductory statement describing the chapter's purpose: to explain the research design, respondents, locale, instruments, data collection, and statistical tools used.",
+      "sections": [
+        {
+          "sectionNumber": 1,
+          "sectionTitle": "Research Design",
+          "sectionGuide": "Describes the type of research design used, its importance, and the researcher's justification.",
+          "appearanceCondition": "Always appears — required for all research studies.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No tables or figures required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "paragraph presents the nature of non-experimental quantitative research design (with authors)."
+              },
+              "requirements": [
+                " Must be in third person. Paragraph presents the nature of non-experimental quantitative research design (with authors). Include at least 2 or more reference authors. 4 or more sentences."
+
+              ],
+              "specialInstructions": [
+                "Focus on why this design fits the study."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 2,
+              "content": {
+                "text": "paragraph shows the importance of descriptive-correlational method which will be used in the present study. Include the personal account of the researcher that demonstrates good explanation of why the researcher utilizes non-experimental. quantitative research design using descriptive-correlational method."
+              },
+              "requirements": [
+                " Must be in third person. paragraph shows the importance of descriptive-correlational method which will be used in the present study.",
+                "Include the personal account of the researcher that demonstrates good explanation of why the researcher utilizes non-experimental.",
+                "quantitative research design using descriptive-correlational method.",
+                "Include at least 2 or more reference authors.",
+                "4 or more sentences."
+              ],
+              "specialInstructions": [
+                "Highlight why descriptive-correlational is suitable for the objectives."
+              ]
+            }
+          ],
+          "notes": [
+            "Ensure correct citation formatting for all authors mentioned."
+          ]
+        },
+        {
+          "sectionNumber": 2,
+          "sectionTitle": "Research Respondents",
+          "sectionGuide": "Specifies the respondents, sampling design, inclusion and exclusion criteria.",
+          "appearanceCondition": "Always appears — required for quantitative studies.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No statistical tables required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Specify  the respondents of the study."
+              },
+              "requirements": [
+                " Must be in third person. Specify  the respondents of the study.",
+                "Identify population and characteristics."
+                
+              ],
+              "specialInstructions": [
+                "Clearly define the respondent group (e.g., students, teachers, professionals)."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 2,
+              "content": {
+                "text": "Describe the sampling design, citing supporting authors."
+              },
+              "requirements": [
+                " Must be in third person. Describe the sampling design, citing supporting authors.",
+                "Include sampling type (probability/non-probability).",
+                "Cite at least one author on sampling method."
+                
+              ],
+              "specialInstructions": [
+                "Explain why this sampling method is appropriate."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 3,
+              "content": {
+                "text": "State the number of samples and provide justification for sample size, citing authors."
+              },
+              "requirements": [
+                " Must be in third person. State the number of samples and provide justification for sample size, citing authors.",
+                "Include sample size value and justification.",
+                "Cite related methodological sources."
+                
+              ],
+              "specialInstructions": [
+                "Provide numerical value and rationale concisely."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 4,
+              "content": {
+                "text": "Discuss the inclusion and exclusion criteria of the population in detail and the reason for each criterion."
+              },
+              "requirements": [
+                " Must be in third person. Discuss the inclusion and exclusion criteria of the population in detail and the reason for each criterion.",
+                "List all criteria for inclusion and exclusion in study population."
+                
+              ],
+              "specialInstructions": [
+                "Keep criteria clear and objective."
+              ]
+            }           
+          ],
+          "notes": []
+        },
+        {
+          "sectionNumber": 3,
+          "sectionTitle": "Research Locale",
+          "sectionGuide": "Describes the place or institution where the study is conducted.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No statistical data required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Provide a detailed description of the place where the study is conducted."
+              },
+              "requirements": [
+                "Must be in third person. Provide a detailed description of the place where the study is conducted.",
+                "Include location details such as region, city, or institution.",
+                "3 or more sentences."
+              ],
+              "specialInstructions": [
+                "Highlight relevance of location to study context."
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "sectionNumber": 4,
+          "sectionTitle": "Research Instrument",
+          "sectionGuide": "Describes the survey instruments used for each variable, including source, author, and scale.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No narrative of results required.",
+          "requiredTable": "Include scale table for each variable [Insert IV1],  [Insert DV].",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Describe the instrument(s) used in the study. Provide sources of survey questionnaires for [Insert IV1],  and [Insert DV], including authors/designers."
+              },
+              "requirements": [
+                " Must be in third person. Describe the instrument(s) used in the study. Provide sources of survey questionnaires for [Insert IV1],  and [Insert DV], including authors/designers.",
+                "Identify if it is researcher-made or adopted."
+                
+              ],
+              "specialInstructions": [
+                "State version and origin of instrument clearly.",
+                "Cite authors or designers explicitly."
+              ]
+            },
+            {
+              "contentType": "paragraph",
+              "contentNumber": 2,
+              "content": {
+                "text": "Introduce the 4-Point Likert Scale."
+              },
+              "requirements": [
+                " Must be in third person. State the that the 4-Point Likert Scale used"
+                
+              ],
+              "specialInstructions": [
+                "State version and origin of instrument clearly.",
+                "Cite authors or designers explicitly."
+              ]
+            },
+
+            {
+              "contentType": "paragraph",
+              "contentNumber": 3,
+              "content": {
+                "text": "To evaluate the level of [Insert IV1], the scales below were employed:"
+              },
+              "requirements": [
+                " Must be in third person. To evaluate the level of [Insert IV1], the scales below were employed: or similar "
+                
+              ],
+              "specialInstructions": [
+                "State version and origin of instrument clearly.",
+                "Cite authors or designers explicitly."
+              ]
+            },
+            {
+              "contentType": "table",
+              "contentNumber": 4,
+              "content": {
+                "tableTitle": "4-Point Likert Scale Interpretation",
+                "description": "Present the 4 point likert scale used for [Insert IV1]."
+              },
+              "requirements": [
+                " Must be in third person. Present the 4 point likert scale used for [Insert IV1]. Table Columns should be: Range of Means, Descriptive Equivalent, and Interpretation. Items under interpretation, should be sentence or phrases. Check the alignment of Descriptive Equivalent, and Interpretation "
+              ],
+              "specialInstructions": [
+                "Present scale in tabular format."
+              ]
+            },
+
+            {
+              "contentType": "paragraph",
+              "contentNumber": 5,
+              "content": {
+                "text": "To evaluate the level of [Insert DV], the scales below were employed:"
+              },
+              "requirements": [
+                " Must be in third person. To evaluate the level of [Insert DV], the scales below were employed: or similar "
+                
+              ],
+              "specialInstructions": [
+                "State version and origin of instrument clearly.",
+                "Cite authors or designers explicitly."
+              ]
+            },
+            {
+              "contentType": "table",
+              "contentNumber": 6,
+              "content": {
+                "tableTitle": "4-Point Likert Scale Interpretation",
+                "description": "Present the 4 point likert scale used for [Insert DV]."
+              },
+              "requirements": [
+                "Must be in third person. Present the 4 point likert scale used for [Insert DV]. Table Columns should be: Range of Means, Descriptive Equivalent, and Interpretation. Items under  interpretation, should be sentence or phrases. Check the alignment of Descriptive Equivalent, and Interpretation"
+              ],
+              "specialInstructions": [
+                "Present scale in tabular format."
+              ]
+            }            
+          ],
+          "notes": [
+            "Ensure consistency in measurement scale descriptions across variables."
+          ]
+        },
+        {
+          "sectionNumber": 5,
+          "sectionTitle": "Data Collection",
+          "sectionGuide": "Explains the process of data collection, including permissions, analysis, and interpretation procedures.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No actual data presentation required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "paragraph",
+              "contentNumber": 1,
+              "content": {
+                "text": "Obtain necessary permissions and ethical approvals, Administer survey instruments to [Insert Respondents], Collect and organize data systematically, Analyze data using appropriate statistical tools, Interpret results in relation to research objectives"
+              },
+              "requirements": [
+                " Must be in third person. Include sequence of activities from permission to interpretation.",
+                "4 or more sentences."
+              ],
+              "specialInstructions": [
+                "Maintain formal academic tone and clarity."
+              ]
+            }
+          ],
+          "notes": [
+            "Emphasize ethical procedures and permissions."
+          ]
+        },
+        {
+          "sectionNumber": 6,
+          "sectionTitle": "Statistical Tools",
+          "sectionGuide": "Lists and explains the statistical methods used to analyze data.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "No computed results required.",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "list",
+              "contentNumber": 1,
+              "content": {
+                "title": "Statistical Analysis Methods:",
+                "items": [
+                  "\nExplain Mean and standard deviation for objectives 1, 2",
+                  "\nT-test for research objective 3",
+                  "\nExplain  Pearson r for objective 4"
+                  
+                ]
+              },
+              "requirements": [
+                " Must be in third person. Describe statistical tools used for each research objective. Use the Content Items."
+              ],
+              "specialInstructions": [
+                "State purpose of each tool clearly (e.g., measure relationship, measure influence)."
+              ]
+            }
+          ],
+          "notes": [
+            "Ensure statistical tools align with study objectives and hypothesis."
+          ]
+        }
+      ],
+      "generalNotes": [
+        "All sections must be written in the past tense, except when describing instruments still in use.",
+        "Avoid repetition of variable descriptions."
+      ]
+    }
+  ]
+}
