@@ -4,6 +4,7 @@ import geminiService from './geminiService';
 import UploadThesisGuide from './UploadThesisGuide';  // Import the new component
 import TableEditor from './TableEditor'; // Import the table editor component
 import ImageUpload from './ImageUpload'; // Import the image upload component
+import FigureEditor from './FigureEditor'; // Import the figure editor component
 import './App.css';
 
 // Main App Component
@@ -1566,6 +1567,36 @@ function App() {
                                     </div>
                                   </div>
                                 )
+                              ) : (block.contentType && typeof block.contentType === 'string' && block.contentType.trim().toLowerCase() === 'figure') ? (
+                                <div className="figure-container">
+                                  <p className="fw-bold">{block.content.figureTitle || 'Figure'}</p>
+                                  <p>{block.content.description}</p>
+                                  <div className="alert alert-info">
+                                    <p><strong>Figure is in the Docx</strong></p>
+                                    <small>The figure will be included in the exported document.</small>
+                                  </div>
+                                  {/* FigureEditor to maintain data structure for export - renders nothing visible */}
+                                  <FigureEditor
+                                    blockId={`chapter-${currentChapter - 1}|section-${currentSectionIndex}|block-${blockIndex}`}
+                                    initialFigureData={thesisContent[`chapter-${currentChapter - 1}`]?.[`section-${currentSectionIndex}`]?.[`block-${blockIndex}`] || { type: block.content.type || 'IV, DV, MODV', iv: '', dv: '', modv: '', iv1: '', iv2: '' }}
+                                    onFigureChange={(figureData) => {
+                                      // Update thesis content when figure data changes
+                                      const newContent = { ...thesisContent };
+                                      const chapterKey = `chapter-${currentChapter - 1}`;
+                                      const sectionKey = `section-${currentSectionIndex}`;
+                                      const blockKey = `block-${blockIndex}`;
+
+                                      if (!newContent[chapterKey]) {
+                                        newContent[chapterKey] = {};
+                                      }
+                                      if (!newContent[chapterKey][sectionKey]) {
+                                        newContent[chapterKey][sectionKey] = {};
+                                      }
+                                      newContent[chapterKey][sectionKey][blockKey] = figureData;
+                                      setThesisContent(newContent);
+                                    }}
+                                  />
+                                </div>
                               ) : (
                                 <div>
                                   {block.content.text && (
@@ -1610,8 +1641,9 @@ function App() {
                                     </div>
                                   </div>
 
-                                  {/* Add image upload after content text for Conceptual Framework sections */}
-                                  {guideData.chapters[currentChapter - 1].sections[currentSectionIndex].sectionTitle.toLowerCase().includes('conceptual framework') && (
+                                  {/* Add image upload after content text for Conceptual Framework sections, but only if there isn't already an explicit image content type */}
+                                  {guideData.chapters[currentChapter - 1].sections[currentSectionIndex].sectionTitle.toLowerCase().includes('conceptual framework') &&
+                                   !guideData.chapters[currentChapter - 1].sections[currentSectionIndex].contentBlocks.some(cb => cb.contentType === 'image') && (
                                     <div className="mt-3">
                                       <label className="form-label fw-bold">Conceptual Framework Image:</label>
                                       <ImageUpload

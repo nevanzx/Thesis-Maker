@@ -4,11 +4,11 @@
   "chapters": [
     {
       "chapterNumber": 1,
-      "chapterTitle": "Chapter 1 INTRODUCTION",
+      "chapterTitle": "INTRODUCTION",
       "sections": [
         {
           "sectionNumber": 1,
-          "sectionTitle": "Rationale of the Study",
+          "sectionTitle": "Rationale",
           "sectionGuide": "Explains the research context and the reasons that led to the conduct of the study.",
           "appearanceCondition": "Always appears.",
           "existenceCondition": "Always exists.",
@@ -240,6 +240,21 @@
               },
               "requirements": [
                 "Must be in third person. Mention each group separately."
+              ]
+            },
+            {
+              "contentType": "figure",
+              "contentNumber": 2,
+              "content": {
+                "figureTitle": "Conceptual Framework",
+                "description": "Present the conceptual framework illustrating the relationship of the Variables.",
+                "type": "IV, DV, MODV"
+              },
+              "requirements": [
+                ""
+              ],
+              "specialInstructions": [
+                "Ensure clarity and proper labeling of all variables and relationships."
               ]
             }
           ],

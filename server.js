@@ -1,7 +1,7 @@
 // server.js - Simple static server for deployment
 const path = require('path');
 const express = require('express');
-const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Media } = require('docx');
+const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Media, ParagraphProperties, Indent } = require('docx');
 
 const app = express();
 
@@ -67,41 +67,41 @@ app.post('/api/export-docx', async (req, res) => {
       standard: {
         titleFont: 'Arial',
         bodyFont: 'Arial',
-        fontSize: 12,
-        heading1Size: 16,
-        heading2Size: 14,
-        heading3Size: 12,
-        lineSpacing: 240, // In twentieths of a point
+        fontSize: 24,  // Font size in docx is in half-points, so 24 = 12pt
+        heading1Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading2Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading3Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        lineSpacing: 480, // In twentieths of a point (480 = double spacing)
         pageMargins: { top: 1440, right: 1440, bottom: 1440, left: 1440 }, // In twentieths of a point (720 = 0.5", 1440 = 1")
       },
       academic: {
         titleFont: 'Arial',
         bodyFont: 'Arial',
-        fontSize: 12,
-        heading1Size: 16,
-        heading2Size: 14,
-        heading3Size: 12,
-        lineSpacing: 240,
+        fontSize: 24,  // Font size in docx is in half-points, so 24 = 12pt
+        heading1Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading2Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading3Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        lineSpacing: 480, // In twentieths of a point (480 = double spacing)
         pageMargins: { top: 1440, right: 1440, bottom: 1440, left: 1440 },
       },
       modern: {
         titleFont: 'Arial',
         bodyFont: 'Arial',
-        fontSize: 12,
-        heading1Size: 16,
-        heading2Size: 14,
-        heading3Size: 12,
-        lineSpacing: 240,
+        fontSize: 24,  // Font size in docx is in half-points, so 24 = 12pt
+        heading1Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading2Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading3Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        lineSpacing: 480, // In twentieths of a point (480 = double spacing)
         pageMargins: { top: 1440, right: 1440, bottom: 1440, left: 1440 },
       },
       arial: {
         titleFont: 'Arial',
         bodyFont: 'Arial',
-        fontSize: 12,
-        heading1Size: 16,
-        heading2Size: 14,
-        heading3Size: 12,
-        lineSpacing: 240,
+        fontSize: 24,  // Font size in docx is in half-points, so 24 = 12pt
+        heading1Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading2Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        heading3Size: 24, // 12pt = 24 half-points (all headings should be 12pt)
+        lineSpacing: 480, // In twentieths of a point (480 = double spacing)
         pageMargins: { top: 1440, right: 1440, bottom: 1440, left: 1440 },
       }
     };
@@ -112,26 +112,7 @@ app.post('/api/export-docx', async (req, res) => {
     // Add content to document
     const paragraphs = [];
 
-    // Add project title if available
-    if (guideData.projectTitle) {
-      paragraphs.push(
-        new Paragraph({
-          children: [
-            new TextRun({
-              text: guideData.projectTitle,
-              font: selectedTemplate.titleFont,
-              size: selectedTemplate.heading1Size,
-              color: "000000", // Black color
-              bold: true,
-            })
-          ],
-          heading: HeadingLevel.HEADING_1,
-          alignment: AlignmentType.CENTER,
-        })
-      );
-      // Add a blank line
-      paragraphs.push(new Paragraph(""));
-    }
+    // Skip project title - removed as requested
 
     // Skip variables section - only include title and context text
 
@@ -141,11 +122,42 @@ app.post('/api/export-docx', async (req, res) => {
         const chapter = guideData.chapters[i];
         const chapterKey = `chapter-${i}`;
 
-        // Add chapter heading
+        // Add the chapter title with "Chapter X" on one line and the chapter name in all caps on the next line, both centered
         paragraphs.push(
           new Paragraph({
-            text: `${chapter.chapterTitle}`,
-            heading: HeadingLevel.HEADING_1,
+            children: [
+              new TextRun({
+                text: `Chapter ${i + 1}`,
+                font: selectedTemplate.bodyFont,
+                size: selectedTemplate.heading1Size,
+                color: "000000", // Black color
+                bold: true,
+              })
+            ],
+            spacing: {
+              line: selectedTemplate.lineSpacing,  // Double line spacing
+              after: 0, // No spacing after header
+            },
+            alignment: AlignmentType.CENTER, // Center align chapter number
+          })
+        );
+
+        paragraphs.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: `${chapter.chapterTitle.toUpperCase()}`,
+                font: selectedTemplate.bodyFont,
+                size: selectedTemplate.heading1Size,
+                color: "000000", // Black color
+                bold: true,
+              })
+            ],
+            spacing: {
+              line: selectedTemplate.lineSpacing,  // Double line spacing
+              after: 0, // No spacing after header
+            },
+            alignment: AlignmentType.CENTER, // Center align chapter title in all caps
           })
         );
 
@@ -168,6 +180,12 @@ app.post('/api/export-docx', async (req, res) => {
                   })
                 ],
                 heading: HeadingLevel.HEADING_2,
+                spacing: {
+                  line: selectedTemplate.lineSpacing,  // Double line spacing
+                  before: 120, // 6pt before spacing (120 TWIPS = 6pt)
+                  after: 0, // No spacing after header
+                },
+                alignment: AlignmentType.LEFT, // Left align headings
               })
             );
 
@@ -188,15 +206,154 @@ app.post('/api/export-docx', async (req, res) => {
                   if (typeof content === 'object' && content !== null) {
                     // Check if this is an image object
                     if (content.type === 'image' && content.data) {
-                      // Handle image content - we'll add it after document creation
-                      // For now, add a placeholder paragraph
+                      // Handle image content - add actual image to document
+                      try {
+                        const image = addImageToDoc(doc, content.data, 600, 400); // Default width x height
+                        if (image) {
+                          paragraphs.push(
+                            new Paragraph({
+                              children: [image],
+                              spacing: {
+                                line: selectedTemplate.lineSpacing,  // Double line spacing
+                              },
+                              alignment: AlignmentType.CENTER, // Center align image
+                            })
+                          );
+                        } else {
+                          // If image insertion failed, add a placeholder
+                          paragraphs.push(
+                            new Paragraph({
+                              children: [
+                                new TextRun({
+                                  text: "[Image Failed to Insert]",
+                                  font: selectedTemplate.bodyFont,
+                                  size: selectedTemplate.fontSize,
+                                  color: "000000", // Black color
+                                })
+                              ],
+                              spacing: {
+                                line: selectedTemplate.lineSpacing,  // Double line spacing
+                              },
+                              alignment: AlignmentType.JUSTIFIED, // Justify text
+                              indent: { // Add 0.5 inch first line indentation
+                                firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                              },
+                            })
+                          );
+                        }
+                      } catch (error) {
+                        console.error('Error inserting image:', error);
+                        // If there's an error, add a placeholder
+                        paragraphs.push(
+                          new Paragraph({
+                            children: [
+                              new TextRun({
+                                text: "[Error Inserting Image]",
+                                font: selectedTemplate.bodyFont,
+                                size: selectedTemplate.fontSize,
+                                color: "000000", // Black color
+                              })
+                            ],
+                            spacing: {
+                              line: selectedTemplate.lineSpacing,  // Double line spacing
+                            },
+                            alignment: AlignmentType.JUSTIFIED, // Justify text
+                            indent: { // Add 0.5 inch first line indentation
+                              firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                            },
+                          })
+                        );
+                      }
+                    }
+                    // Check if this is a figure object
+                    else if (block.contentType === 'figure' && content.figureTitle) {
+                      // Handle figure content - add figure title and description
                       paragraphs.push(
                         new Paragraph({
                           children: [
-                            new TextRun("[Image Placeholder]")
-                          ]
+                            new TextRun({
+                              text: content.figureTitle,
+                              font: selectedTemplate.bodyFont,
+                              size: selectedTemplate.fontSize,
+                              color: "000000", // Black color
+                              bold: true,
+                            })
+                          ],
+                          spacing: {
+                            line: selectedTemplate.lineSpacing,  // Double line spacing
+                          },
+                          alignment: AlignmentType.CENTER, // Center align figure title
                         })
                       );
+
+                      // Add description if available
+                      if (content.description) {
+                        paragraphs.push(
+                          new Paragraph({
+                            children: [
+                              new TextRun({
+                                text: content.description,
+                                font: selectedTemplate.bodyFont,
+                                size: selectedTemplate.fontSize,
+                                color: "000000", // Black color
+                              })
+                            ],
+                            spacing: {
+                              line: selectedTemplate.lineSpacing,  // Double line spacing
+                            },
+                            alignment: AlignmentType.JUSTIFIED, // Justify text
+                          })
+                        );
+                      }
+
+                      // Add figure type information if available (for reference)
+                      if (content.type) {
+                        paragraphs.push(
+                          new Paragraph({
+                            children: [
+                              new TextRun({
+                                text: `(Type: ${content.type})`,
+                                font: selectedTemplate.bodyFont,
+                                size: selectedTemplate.fontSize - 4, // Slightly smaller font for type info
+                                color: "000000", // Black color
+                                italics: true,
+                              })
+                            ],
+                            spacing: {
+                              line: selectedTemplate.lineSpacing,  // Double line spacing
+                            },
+                            alignment: AlignmentType.CENTER, // Center align type info
+                          })
+                        );
+                      }
+
+                      // Add variable information if available (from FigureEditor)
+                      const variableInfo = [];
+                      if (content.iv) variableInfo.push(`IV: ${content.iv}`);
+                      if (content.dv) variableInfo.push(`DV: ${content.dv}`);
+                      if (content.modv) variableInfo.push(`MODV: ${content.modv}`);
+                      if (content.iv1) variableInfo.push(`IV1: ${content.iv1}`);
+                      if (content.iv2) variableInfo.push(`IV2: ${content.iv2}`);
+
+                      if (variableInfo.length > 0) {
+                        paragraphs.push(
+                          new Paragraph({
+                            children: [
+                              new TextRun({
+                                text: variableInfo.join(', '),
+                                font: selectedTemplate.bodyFont,
+                                size: selectedTemplate.fontSize - 4, // Slightly smaller font
+                                color: "000000", // Black color
+                                italics: true,
+                              })
+                            ],
+                            spacing: {
+                              line: selectedTemplate.lineSpacing,  // Double line spacing
+                            },
+                            alignment: AlignmentType.CENTER, // Center align variable info
+                          })
+                        );
+                      }
                     }
                     // Check if this is a table object
                     else if (content.type === 'table' && content.data) {
@@ -223,7 +380,14 @@ app.post('/api/export-docx', async (req, res) => {
                                 size: selectedTemplate.fontSize,
                                 color: "000000", // Black color
                               })
-                            ]
+                            ],
+                            spacing: {
+                              line: selectedTemplate.lineSpacing,  // Double line spacing
+                            },
+                            alignment: AlignmentType.JUSTIFIED, // Justify text
+                            indent: { // Add 0.5 inch first line indentation
+                              firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                            },
                           })
                         );
                       }
@@ -242,7 +406,14 @@ app.post('/api/export-docx', async (req, res) => {
                                   size: selectedTemplate.fontSize,
                                   color: "000000", // Black color
                                 })
-                              ]
+                              ],
+                              spacing: {
+                                line: selectedTemplate.lineSpacing,  // Double line spacing
+                              },
+                              alignment: AlignmentType.JUSTIFIED, // Justify text
+                              indent: { // Add 0.5 inch first line indentation
+                                firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                              },
                             })
                           );
                         }
@@ -259,7 +430,14 @@ app.post('/api/export-docx', async (req, res) => {
                             size: selectedTemplate.fontSize,
                             color: "000000", // Black color
                           })
-                        ]
+                        ],
+                        spacing: {
+                          line: selectedTemplate.lineSpacing,  // Double line spacing
+                        },
+                        alignment: AlignmentType.JUSTIFIED, // Justify text
+                        indent: { // Add 0.5 inch first line indentation
+                          firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                        },
                       })
                     );
                   }
@@ -269,19 +447,64 @@ app.post('/api/export-docx', async (req, res) => {
                 const imageBlockKey = `${blockKey}-image`;
                 const imageContent = thesisContent[chapterKey]?.[sectionKey]?.[imageBlockKey];
                 if (imageContent && typeof imageContent === 'object' && imageContent.type === 'image' && imageContent.data) {
-                  // Add placeholder for image
-                  paragraphs.push(
-                    new Paragraph({
-                      children: [
-                        new TextRun({
-                          text: "[Image Placeholder]",
-                          font: selectedTemplate.bodyFont,
-                          size: selectedTemplate.fontSize,
-                          color: "000000", // Black color
+                  // Add actual image to document
+                  try {
+                    const image = addImageToDoc(doc, imageContent.data, 600, 400); // Default width x height
+                    if (image) {
+                      paragraphs.push(
+                        new Paragraph({
+                          children: [image],
+                          spacing: {
+                            line: selectedTemplate.lineSpacing,  // Double line spacing
+                          },
+                          alignment: AlignmentType.CENTER, // Center align image
                         })
-                      ]
-                    })
-                  );
+                      );
+                    } else {
+                      // If image insertion failed, add a placeholder
+                      paragraphs.push(
+                        new Paragraph({
+                          children: [
+                            new TextRun({
+                              text: "[Image Failed to Insert]",
+                              font: selectedTemplate.bodyFont,
+                              size: selectedTemplate.fontSize,
+                              color: "000000", // Black color
+                            })
+                          ],
+                          spacing: {
+                            line: selectedTemplate.lineSpacing,  // Double line spacing
+                          },
+                          alignment: AlignmentType.JUSTIFIED, // Justify text
+                          indent: { // Add 0.5 inch first line indentation
+                            firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                          },
+                        })
+                      );
+                    }
+                  } catch (error) {
+                    console.error('Error inserting image:', error);
+                    // If there's an error, add a placeholder
+                    paragraphs.push(
+                      new Paragraph({
+                        children: [
+                          new TextRun({
+                            text: "[Error Inserting Image]",
+                            font: selectedTemplate.bodyFont,
+                            size: selectedTemplate.fontSize,
+                            color: "000000", // Black color
+                          })
+                        ],
+                        spacing: {
+                          line: selectedTemplate.lineSpacing,  // Double line spacing
+                        },
+                        alignment: AlignmentType.JUSTIFIED, // Justify text
+                        indent: { // Add 0.5 inch first line indentation
+                          firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                        },
+                      })
+                    );
+                  }
                 }
 
                 // Handle special content block types (list, table, etc.)
@@ -301,7 +524,14 @@ app.post('/api/export-docx', async (req, res) => {
                               size: selectedTemplate.fontSize,
                               color: "000000", // Black color
                             })
-                          ]
+                          ],
+                          spacing: {
+                            line: selectedTemplate.lineSpacing,  // Double line spacing
+                          },
+                          alignment: AlignmentType.JUSTIFIED, // Justify text
+                          indent: { // Add 0.5 inch first line indentation
+                            firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                          },
                         })
                       );
                     }
@@ -320,7 +550,14 @@ app.post('/api/export-docx', async (req, res) => {
                             size: selectedTemplate.fontSize,
                             color: "000000", // Black color
                           })
-                        ]
+                        ],
+                        spacing: {
+                          line: selectedTemplate.lineSpacing,  // Double line spacing
+                        },
+                        alignment: AlignmentType.JUSTIFIED, // Justify text
+                        indent: { // Add 0.5 inch first line indentation
+                          firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                        },
                       })
                     );
                   }
@@ -341,7 +578,14 @@ app.post('/api/export-docx', async (req, res) => {
                                 size: selectedTemplate.fontSize,
                                 color: "000000", // Black color
                               })
-                            ]
+                            ],
+                            spacing: {
+                              line: selectedTemplate.lineSpacing,  // Double line spacing
+                            },
+                            alignment: AlignmentType.JUSTIFIED, // Justify text
+                            indent: { // Add 0.5 inch first line indentation
+                              firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+                            },
                           })
                         );
                       }
@@ -369,13 +613,15 @@ app.post('/api/export-docx', async (req, res) => {
         default: {
           heading1: {
             run: {
-              font: selectedTemplate.titleFont,
+              font: selectedTemplate.bodyFont,
               size: selectedTemplate.heading1Size,
               color: "000000", // Black color
+              bold: true,
             },
             paragraph: {
               spacing: {
-                after: 120,
+                after: selectedTemplate.lineSpacing, // Double spacing
+                line: selectedTemplate.lineSpacing,  // Double line spacing
               },
             },
           },
@@ -384,10 +630,12 @@ app.post('/api/export-docx', async (req, res) => {
               font: selectedTemplate.bodyFont,
               size: selectedTemplate.heading2Size,
               color: "000000", // Black color
+              bold: true,
             },
             paragraph: {
               spacing: {
-                after: 120,
+                after: selectedTemplate.lineSpacing, // Double spacing
+                line: selectedTemplate.lineSpacing,  // Double line spacing
               },
             },
           },
@@ -396,10 +644,12 @@ app.post('/api/export-docx', async (req, res) => {
               font: selectedTemplate.bodyFont,
               size: selectedTemplate.heading3Size,
               color: "000000", // Black color
+              bold: true,
             },
             paragraph: {
               spacing: {
-                after: 120,
+                after: selectedTemplate.lineSpacing, // Double spacing
+                line: selectedTemplate.lineSpacing,  // Double line spacing
               },
             },
           },
@@ -408,6 +658,14 @@ app.post('/api/export-docx', async (req, res) => {
               font: selectedTemplate.bodyFont,
               size: selectedTemplate.fontSize,
               color: "000000", // Black color
+            },
+            paragraph: {
+              spacing: {
+                line: selectedTemplate.lineSpacing,  // Double line spacing
+              },
+              indent: { // Add 0.5 inch first line indentation for default paragraphs
+                firstLine: 720, // 720 TWIPS = 0.5 inches first line indent (1440 TWIPS = 1 inch)
+              },
             },
           },
         },

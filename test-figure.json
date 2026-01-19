@@ -1,0 +1,53 @@
+{
+  "projectTitle": "Test Figure Content Type",
+  "version": "1.0",
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle": "INTRODUCTION",
+      "sections": [
+        {
+          "sectionNumber": 1,
+          "sectionTitle": "Conceptual Framework",
+          "sectionGuide": "Illustrate the relationship of the Variables.",
+          "appearanceCondition": "Always appears.",
+          "existenceCondition": "Always exists.",
+          "notRequiredContent": "",
+          "requiredTable": "",
+          "contentBlocks": [
+            {
+              "contentType": "figure",
+              "contentNumber": 1,
+              "content": {
+                "figureTitle": "Conceptual Framework",
+                "description": "Present the conceptual framework illustrating the relationship of the Variables.",
+                "type": "IV, DV, MODV"
+              },
+              "requirements": [
+                "Ensure clarity and proper labeling of all variables and relationships."
+              ],
+              "specialInstructions": [
+                "Ensure clarity and proper labeling of all variables and relationships."
+              ]
+            },
+            {
+              "contentType": "figure",
+              "contentNumber": 2,
+              "content": {
+                "figureTitle": "Two Independent Variables Framework",
+                "description": "Present the conceptual framework with two independent variables.",
+                "type": "2IV, DV"
+              },
+              "requirements": [
+                "Ensure clarity and proper labeling of all variables and relationships."
+              ],
+              "specialInstructions": [
+                "Ensure clarity and proper labeling of all variables and relationships."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
